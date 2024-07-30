@@ -1,12 +1,16 @@
-# ArgoCD con Kubefirst
+# ArgoCD with Kubefirst demo
 
-[Kubefirst](https://kubefirst.io/) es una plataforma de GitOps que instala las herramientas más populares del mercado en cuestión de minutos 🚀.
+[![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md)
+[![es](https://img.shields.io/badge/lang-es-yellow.svg)](./README-es.md)
 
-![Arquitectura de Kubefirst k3d](image.png)
 
-## Instalación
+[Kubefirst](https://kubefirst.io/) delivers instant GitOps platforms so you can have the most popular open source platform tools working together in minutes. 🚀.
 
-Instala Kubefirst con Homebrew
+![Kubefirst k3d architecture](image.png)
+
+## Installation
+
+Install it with Homebrew (MacOS) follow the [documentation](https://docs.kubefirst.io/k3d/quick-start/install) to install in different OS.
 
 ```bash
 brew install kubefirst/tools/kubefirst
@@ -14,22 +18,26 @@ brew install mkcert
 mkcert -install
 ```
 
-## Creando nuestro ambiente local de K3d
+## What is K3d?
 
-Para crear nuestro ambiente en K3d necesitamos unos cuantos prerequisitos:
+k3d is a lightweight wrapper to run k3s (Rancher Lab's minimal Kubernetes distribution) in docker. k3d makes it very easy to create single- and multi-node k3s clusters in docker, e.g. for local development on Kubernetes
 
-1. Tener instalado Docker y funcionando.
-2. Una cuenta de GitHub y un GITHUB_TOKEN expuesto en nuestra terminal.
+## Creating our K3d environment
 
-Simplemente corremos el siguiente comando:
+In order to create our K3d environment there are some prerequisites
+
+1. Docker should be installed and up and running.
+2. A Github account with a GITHUB_TOKEN exposed as an env var in our shell.
+
+Then we can run the following
 
 ```bash
 kubefirst k3d create
 ```
 
-## Credenciales de la infraestructura
+## Login credentials
 
-Si necesitas obtener las credenciales de los sistemas que Kubefirst instaló puedes usar el comando:
+If you need the credentials to log in to any of the internal systems run the following command:
 
 ```bash
 kubefirst k3d root-credentials
